@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* SRCB Academic Theme Colors */
+  --primary: #0A2540; /* Deep Royal Blue */
+  --primary-hover: #153B60;
+  
+  --secondary: #FFFFFF; /* White Cards & Bg */
+  --background: #F4F7F9; /* Off-white/Light gray for body background */
+  
+  --accent: #42A5F5; /* Light Blue Accent */
+  --accent-hover: #1E88E5;
+  --accent-green: #66BB6A; /* Success/Secondary Accent */
+  
+  --text-main: #1C2B3A; /* Dark for high readability */
+  --text-muted: #6B7A90; /* For dates, subtle info */
+  
+  --border-light: #E0E6ED;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+  
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Base Layout utility */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Typgraphy Utilities */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: white;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: rgba(10, 37, 64, 0.05);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-muted);
+}
+
+.btn-ghost:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-main);
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background-color: var(--secondary);
+  color: var(--text-main);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(66, 165, 245, 0.2);
+}
+
+.form-input::placeholder {
+  color: #A0ABBA;
+}
+
+/* Cards */
+.card {
+  background-color: var(--secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-footer {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--border-light);
+  background-color: rgba(244, 247, 249, 0.5);
+}
+
+/* Badges / Tags */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.badge-blue {
+  background-color: rgba(66, 165, 245, 0.1);
+  color: var(--accent);
+}
+
+.badge-green {
+  background-color: rgba(102, 187, 106, 0.1);
+  color: var(--accent-green);
+}
+
+.badge-gray {
+  background-color: rgba(107, 122, 144, 0.1);
+  color: var(--text-muted);
+}
